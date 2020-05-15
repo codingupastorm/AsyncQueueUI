@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 
 namespace AsyncQueueUI
 {
+    /// <summary>
+    /// Manages the UI. Might be a Window in WPF
+    /// </summary>
     public class UIController
     {
         private readonly ITaskQueue taskQueue;
@@ -11,21 +14,30 @@ namespace AsyncQueueUI
         public UIController(ITaskQueue taskQueue)
         {
             this.taskQueue = taskQueue;
+
+            // Get our UI re-rendering when our queue progresses / changes.
             this.taskQueue.SetCallback(this.Render);
         }
 
-        public void OnTaskCanceledButtonHandler()
+
+        /// <summary>
+        /// Some examples of actions / buttons that will come through and cause actions on the queue. e.g. <see cref="ITaskQueue.Remove(int)"/>.
+        /// </summary>
+        private void OnTaskCanceledButtonHandler(object sender, EventArgs @event)
         {
             throw new NotImplementedException();
         }
 
-        public void OnTaskMovedButtonHandler()
+        private void OnTaskMovedButtonHandler(object sender, EventArgs @event)
         {
             throw new NotImplementedException();
         }
 
-        
-        public void Render()
+        /// <summary>
+        /// Outputs views based on data from the queue.
+        /// Gets called when the queue updates.
+        /// </summary>
+        private void Render()
         {
             Task.Run(() =>
             {
