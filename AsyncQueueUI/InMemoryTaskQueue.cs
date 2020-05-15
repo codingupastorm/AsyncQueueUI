@@ -48,7 +48,7 @@ namespace AsyncQueueUI
             throw new System.NotImplementedException();
         }
 
-        public void SetCallback(Action callback)
+        public void OnUpdate(Action callback)
         {
             throw new NotImplementedException();
         }

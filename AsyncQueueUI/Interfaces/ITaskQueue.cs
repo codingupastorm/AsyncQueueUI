@@ -34,7 +34,7 @@ namespace AsyncQueueUI.Interfaces
         /// <summary>
         /// Set a method to be called when changes happen in the queue.
         /// </summary>
-        void SetCallback(Action callback);
+        void OnUpdate(Action callback);
 
     }
 }

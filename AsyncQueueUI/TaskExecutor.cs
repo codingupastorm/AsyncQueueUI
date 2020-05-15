@@ -13,6 +13,8 @@ namespace AsyncQueueUI
 
         /// <summary>
         /// Will start a loop on a new thread that is constantly waiting / getting items from taskQueue and executing them.
+        ///
+        /// More complex implementations may allow for delegating different task types to different executors etc.
         /// </summary>
         public void Start()
         {

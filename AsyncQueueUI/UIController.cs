@@ -16,9 +16,8 @@ namespace AsyncQueueUI
             this.taskQueue = taskQueue;
 
             // Get our UI re-rendering when our queue progresses / changes.
-            this.taskQueue.SetCallback(this.Render);
+            this.taskQueue.OnUpdate(this.Render);
         }
-
 
         /// <summary>
         /// Some examples of actions / buttons that will come through and cause actions on the queue. e.g. <see cref="ITaskQueue.Remove(int)"/>.
